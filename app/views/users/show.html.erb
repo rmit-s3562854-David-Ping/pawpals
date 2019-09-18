@@ -1,0 +1,70 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <section class="user_info">
+    <%= gravatar_for @user %>
+    <h1><%= @user.name %></h1>
+    <h2><%= @user.email %></h2>
+  </section>
+  
+  <%# if current_user %>
+    <div class="text-center">
+      <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-success" %>
+    </div>
+<!--    <hr>-->
+  <%# end %>
+  
+  <%# @user.courses.each do |course| %>
+<!--    <div class="course-summary col-sm-8 col-sm-offset-2">-->
+<!--      <h3><%#= link_to course.name, course_path(course) %></h3>-->
+<!--      <p>Prerequisite: <%#= course.prerequisite %></p>-->
+<!--      <p>Created: <%#= time_ago_in_words(course.created_at) %> ago</p>-->
+<!--      <div class="course-rating">-->
+        <%# if current_user != nil %>
+          <%#= form_for(current_user.course_votes.build) do |form| %>
+            <%#= hidden_field_tag :user_id, current_user.id %>
+            <%#= hidden_field_tag :course_id, course.id %>
+            <%#= hidden_field_tag :up_or_down, "up" %>
+  
+<!--            <button type="submit" class="no-default">-->
+<!--              <span>-->
+<!--                <i class="material-icons">thumb_up</i>-->
+                <%#= course.course_votes.where(:up_or_down => "up").count %>
+<!--              </span>-->
+<!--            </button>-->
+          <%# end %>
+        <%# else %>
+<!--          <button type="submit" class="no-default">-->
+<!--            <span>-->
+<!--              <i class="material-icons">thumb_up</i>-->
+              <%#= course.course_votes.where(:up_or_down => "up").count %>
+<!--            </span>-->
+<!--          </button>-->
+        <%# end %>
+        
+        <%# if current_user != nil %>
+          <%#= form_for(current_user.course_votes.build) do |form| %>
+            <%#= hidden_field_tag :user_id, current_user.id %>
+            <%#= hidden_field_tag :course_id, course.id %>
+            <%#= hidden_field_tag :up_or_down, "down" %>
+            
+<!--            <button type="submit" class="no-default">-->
+<!--              <span>-->
+<!--                <i class="material-icons">thumb_down</i>-->
+                <%#= course.course_votes.where(:up_or_down => "down").count %>
+<!--              </span>-->
+<!--            </button>-->
+          <%# end %>
+        <%# else %>
+<!--          <button type="submit" class="no-default">-->
+<!--              <span>-->
+<!--                <i class="material-icons">thumb_down</i>-->
+                <%#= course.course_votes.where(:up_or_down => "down").count %>
+<!--              </span>-->
+<!--            </button>-->
+        <%# end %>
+<!--      </div>-->
+  
+<!--    </div>-->
+<!--    <hr>-->
+  <%# end %>
+</div>

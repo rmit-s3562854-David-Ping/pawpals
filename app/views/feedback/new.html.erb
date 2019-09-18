@@ -1,0 +1,5 @@
+<h1>Contact us</h1>
+<%= form_for :feedbacks, url: contact_us_url do |form| %>
+  <%= form.text_area :message, placeholder: 'Message' %>
+  <%= form.submit 'Send feedback', class: "btn btn-success" %>
+<% end %>

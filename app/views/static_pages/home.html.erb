@@ -1,0 +1,28 @@
+<div class="center jumbotron">
+  <h1>Welcome to PawPals</h1>
+  <h2>The meetup app for petowners</h2>
+  <%= link_to signup_path, :class => "btn btn-lg btn-danger" do %>
+    <div>
+      <i class="material-icons">settings</i>Sign up now
+    </div>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-xs-6 col-sm-4">
+    <h3>View Course as Guest User</h3>
+    <p>Browse and view couses as a guest and sign up later</p>
+    <%#= link_to courses_path, :class => "btn btn-success" do %>
+<!--      <div><i class="material-icons">library_books</i>Browse all courses</div>-->
+    <%# end %>
+  </div>
+  <div class="col-xs-6 col-sm-4">
+    <h3>Sign in to your account</h3>
+    <p>Update your courses, rate courses, view coordinator informations</p>
+    <%= link_to login_path, :class => "btn btn-success" do %>
+      <div>
+        <i class="material-icons">person</i>Log in to your account
+      </div>
+    <% end %>
+  </div>
+</div>

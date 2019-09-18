@@ -1,8 +1,12 @@
-# Common helpers which will be available to all the views
 module ApplicationHelper
-  # Returns the title of the page
+
+  # Returns the full title on a per-page basis.
   def full_title(page_title = '')
-    base_title = "Pawpals"
-    return page_title.empty? ? base_title : page_title + ' | ' + base_title
+    base_title = "Your Course"
+    if page_title.empty?
+      base_title
+    else
+      page_title + " | " + base_title
+    end
   end
 end

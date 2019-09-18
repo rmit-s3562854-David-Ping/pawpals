@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails', '~> 5.2.0'
-gem 'sqlite3'
+gem 'bootstrap-sass', '3.3.7'
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -11,6 +11,10 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bcrypt',         '3.1.12'
+gem 'carrierwave',    '1.2.2'
+gem 'mini_magick',    '4.7.0'
+gem 'popper_js',      '1.14.5'
 
 group :development, :test do
   gem 'sqlite3',    '1.4.1'
@@ -22,6 +26,7 @@ group :development do
   gem 'listen',                '3.1.5'
   gem 'spring',                '2.1.0'
   gem 'spring-watcher-listen', '2.0.1'
+  gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 end
 
 group :test do
