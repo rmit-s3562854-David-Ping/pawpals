@@ -198,7 +198,6 @@ i.material-icons {
 /* Gravatar */
 .gravatar {
   border-radius: 50%;
-  display: block;
   margin: 25px auto 10px;
   
   + p {
@@ -267,6 +266,13 @@ input {
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
   }
+}
+
+.user_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 /* Courses page */
