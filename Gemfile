@@ -20,6 +20,7 @@ gem 'popper_js',      '1.14.5'
 gem 'faker',          '2.1.2'
 gem 'will_paginate',           '3.1.8'
 gem 'bootstrap-will_paginate', '1.0.0'
+gem 'aws-sdk-rails'
 
 group :development, :test do
   gem 'sqlite3', git: "https://github.com/larskanis/sqlite3-ruby", branch: "add-gemspec"
