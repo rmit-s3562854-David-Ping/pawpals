@@ -15,12 +15,15 @@ gem 'jbuilder',       '2.7.0'
 gem 'bcrypt-ruby', '3.1.0', :require => 'bcrypt'
 # gem 'bcrypt',         '3.1.11'
 gem 'carrierwave',    '1.2.2'
+gem 'image_processing', '1.9.3'
 gem 'mini_magick',    '4.7.0'
 gem 'popper_js',      '1.14.5'
 gem 'faker',          '2.1.2'
 gem 'will_paginate',           '3.1.8'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'aws-sdk-rails'
+gem 'aws-sdk-s3', require: false
+gem 'active_storage_validations', '0.8.2'
 
 group :development, :test do
   gem 'sqlite3', '1.4.1'
