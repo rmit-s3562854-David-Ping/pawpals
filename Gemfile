@@ -23,7 +23,8 @@ gem 'bootstrap-will_paginate', '1.0.0'
 gem 'aws-sdk-rails'
 
 group :development, :test do
-  gem 'sqlite3', git: "https://github.com/larskanis/sqlite3-ruby", branch: "add-gemspec"
+  gem 'sqlite3', '1.4.1'
+  # gem 'sqlite3', git: "https://github.com/larskanis/sqlite3-ruby", branch: "add-gemspec"
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 

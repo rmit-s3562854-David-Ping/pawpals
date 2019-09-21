@@ -35,6 +35,12 @@
     <orderEntry type="library" scope="PROVIDED" name="addressable (v2.7.0, ruby-2.6.4-p104) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="arel (v9.0.0, ruby-2.6.4-p104) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="autoprefixer-rails (v9.6.1.1, ruby-2.6.4-p104) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-eventstream (v1.0.3, ruby-2.6.4-p104) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-partitions (v1.217.0, ruby-2.6.4-p104) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-core (v3.68.0, ruby-2.6.4-p104) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-rails (v2.1.0, ruby-2.6.4-p104) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-ses (v1.26.0, ruby-2.6.4-p104) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sigv4 (v1.1.0, ruby-2.6.4-p104) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt-ruby (v3.1.0, ruby-2.6.4-p104) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bindex (v0.8.1, ruby-2.6.4-p104) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootstrap-sass (v3.3.7, ruby-2.6.4-p104) [gem]" level="application" />
@@ -58,6 +64,7 @@
     <orderEntry type="library" scope="PROVIDED" name="globalid (v0.4.2, ruby-2.6.4-p104) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v1.6.0, ruby-2.6.4-p104) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.7.0, ruby-2.6.4-p104) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jmespath (v1.4.0, ruby-2.6.4-p104) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v4.3.1, ruby-2.6.4-p104) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="listen (v3.1.5, ruby-2.6.4-p104) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.2.3, ruby-2.6.4-p104) [gem]" level="application" />
@@ -97,7 +104,6 @@
     <orderEntry type="library" scope="PROVIDED" name="spring-watcher-listen (v2.0.1, ruby-2.6.4-p104) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v3.7.2, ruby-2.6.4-p104) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.2.1, ruby-2.6.4-p104) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v1.3.13.20180326210955@102750, ruby-2.6.4-p104) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v0.20.3, ruby-2.6.4-p104) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thread_safe (v0.3.6, ruby-2.6.4-p104) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v2.0.9, ruby-2.6.4-p104) [gem]" level="application" />
