@@ -1,32 +1,33 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+# git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'rails', '~> 5.2.0'
+gem 'rails', '5.2.3'
 gem 'bootstrap-sass', '3.3.7'
-gem 'puma', '~> 3.11'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
+gem 'puma',           '3.9.1'
+gem 'sass-rails',     '5.0.6'
+gem 'uglifier',       '3.2.0'
+gem 'coffee-rails',   '4.2.2'
+gem 'jquery-rails',   '4.3.1'
 gem 'duktape'
-gem 'coffee-rails', '~> 4.2'
-gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.5'
-gem 'bootsnap', '>= 1.1.0', require: false
-gem 'bcrypt',         '3.1.12'
+gem 'turbolinks',     '5.0.1'
+gem 'jbuilder',       '2.7.0'
+# gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bcrypt-ruby', '3.1.0', :require => 'bcrypt'
+# gem 'bcrypt',         '3.1.11'
 gem 'carrierwave',    '1.2.2'
 gem 'mini_magick',    '4.7.0'
 gem 'popper_js',      '1.14.5'
 
 group :development, :test do
-  gem 'sqlite3',    '1.4.1'
+  gem 'sqlite3', git: "https://github.com/larskanis/sqlite3-ruby", branch: "add-gemspec"
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
-  gem 'web-console',           '4.0.1'
+  gem 'web-console',           '3.5.1'
   gem 'listen',                '3.1.5'
-  gem 'spring',                '2.1.0'
+  gem 'spring',                '2.0.2'
   gem 'spring-watcher-listen', '2.0.1'
-  gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 end
 
 group :test do

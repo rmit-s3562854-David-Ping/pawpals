@@ -18,3 +18,19 @@ V
 &app/views/layouts/application.html.erb,e\8\e82294e631b91cb53fe2e362dfd3b8e4a3924ae2
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+L
+.elasticbeanstalk/config.yml,8\b\8b2942d96ac7340d161e27b51e58adf960d5d86f
+U
+%app/assets/javascripts/application.js,4\3\431311cbb9902e2a56811443372061424f388e2c
+O
+app/assets/javascripts/cable.js,3\3\3361c1b07e065614675da80b8af1f1df6db1c393
+V
+&app/assets/stylesheets/application.css,5\6\565e1651e502b72ad76ed27e8f0a562fea115987
+<
+package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
+Y
+)db/migrate/20190918000757_create_users.rb,6\5\65ce3b206e28dfac74f30b2e9cd558c1f0aae85b
+E
+config/application.rb,7\f\7ff7049c1c8745b54f0a9ef78996f60b38f36268
+=
+.ruby-version,1\9\19ed2a9b83b226ba18e78966454862762d8fef02
