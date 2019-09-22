@@ -1,6 +1,11 @@
 class User < ApplicationRecord
   has_many :microposts, dependent: :destroy
   attr_accessor :remember_token, :activation_token
+  has_one_attached :image
+  validates :image,
+            content_type: { in: %w[image/jpeg image/gif image/png], message: "must be a valid image format" },
+            size:         { less_than: 5.megabytes, message: "should be less than 5MB" }
+
   before_save   :downcase_email
   before_create :create_activation_digest
   validates :name,  presence: true, length: { minimum: 4, maximum: 50 }

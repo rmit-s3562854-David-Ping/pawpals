@@ -11,9 +11,7 @@ class FeedbackController < ApplicationController
   end
   
   private
-    # Never trust parameters from the scary internet, only allow the white list through.
     def feedback_params
       params.require(:feedback).permit(:message)
     end
-  
 end
