@@ -8,6 +8,6 @@ class FeedbackMailer < ApplicationMailer
   def send_feedback(message)
     @message = message
 
-    mail to: "davidping96@gmail.com", subject: "Feedback", from: "noreply@example.com"
+    mail to: "davidping96@gmail.com", subject: "Feedback", from: "s3562854@student.rmit.edu.au"
   end
 end

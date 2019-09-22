@@ -304,11 +304,6 @@ input {
     display: block;
     margin-left: 60px;
   }
-  .gravatar {
-    float: left;
-    margin-right: 10px;
-    margin-top: 5px;
-  }
 }
 
 aside {
@@ -333,14 +328,33 @@ span.image {
   flex-direction: column;
 }
 
+/* Pets */
+.pet-list {
+  display: flex;
+
+  .pet-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .pet-image {
+
+      img {
+        border-radius: 50%;
+        height: 200px;
+        width: 200px;
+      }
+    }
+  }
+}
+
 /* Courses page */
 .course-picture {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  
-  
+
   max-width: 280px;
   
   img {

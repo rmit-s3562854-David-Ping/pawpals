@@ -1,0 +1,50 @@
+<%= form_with(model: pet, local: true) do |form| %>
+  <% if pet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pet.errors.count, "error") %> prohibited this pet from being saved:</h2>
+
+      <ul>
+      <% pet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pet_type %>
+    <%= form.text_field :pet_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :breed %>
+    <%= form.text_field :breed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birth_date %>
+    <%= form.date_select :birth_date, :start_year => Date.today.year - 20, :end_year => Date.today.year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.select(:gender, options_for_select(['male', 'female'], 'male'),
+               {}, class: "gender-select") %>
+  </div>
+
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
+  <div class="actions">
+    <%= form.submit button_text, :class => "btn btn-success" %>
+  </div>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_18_140218) do
+ActiveRecord::Schema.define(version: 2019_09_22_024900) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -42,10 +42,21 @@ ActiveRecord::Schema.define(version: 2019_09_18_140218) do
     t.index ["user_id"], name: "index_microposts_on_user_id"
   end
 
+  create_table "pets", force: :cascade do |t|
+    t.string "name"
+    t.string "pet_type"
+    t.string "breed"
+    t.date "birth_date"
+    t.string "gender"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_pets_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "picture"
     t.string "password_digest"
     t.string "remember_digest"
     t.datetime "created_at", null: false

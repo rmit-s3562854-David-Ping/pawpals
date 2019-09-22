@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<div class="pet-image">
+  <%= image_tag @pet.image if @pet.image.attached? %>
+</div>
+<h2><%= @pet.name %></h2>
+<p><%= @pet.pet_type %>, <%= @pet.breed %></p>
+<p>Age: <%= ((Time.zone.now - @pet.birth_date.to_time) / 1.year.seconds).floor %></p>
+<p>Gender: <%= @pet.gender %></p>
+
+<%= link_to 'Edit', edit_pet_path(@pet), class: "btn btn-primary" %>
+<%= link_to 'Back', pets_path, class: "btn btn-primary" %>

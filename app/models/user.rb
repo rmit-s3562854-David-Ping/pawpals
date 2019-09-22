@@ -1,10 +1,8 @@
 class User < ApplicationRecord
   has_many :microposts, dependent: :destroy
+  has_many :pets, class_name: "Pet", foreign_key: "user_id"
   attr_accessor :remember_token, :activation_token
   has_one_attached :image
-  validates :image,
-            content_type: { in: %w[image/jpeg image/gif image/png], message: "must be a valid image format" },
-            size:         { less_than: 5.megabytes, message: "should be less than 5MB" }
 
   before_save   :downcase_email
   before_create :create_activation_digest
@@ -24,6 +22,10 @@ class User < ApplicationRecord
                         length: { minimum: 8 },
                         allow_nil: true,
                         format: { with: LOWER_CASE_REGEX && UPPER_CASE_REGEX && NUMBER_REGEX && SPECIAL_CHAR_REGEX, message: "must contains at least a lowercase letter, a uppercase, a digit, a special character and 8+ characters" }
+
+  validates :image,
+            content_type: { in: %w[image/jpeg image/gif image/png], message: "must be a valid image format" },
+            size:         { less_than: 5.megabytes, message: "should be less than 5MB" }
 
   # Returns the hash digest of the given string.
   def User.digest(string)
