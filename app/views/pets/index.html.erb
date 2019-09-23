@@ -1,22 +1,24 @@
 <h1>Pets</h1>
 
 <div class="pet-list">
-  <% @pets.each do |pet| %>
-    <div class="pet-container col-sm-3 col-md-4">
-      <div class="pet-image">
-        <%= image_tag pet.image if pet.image.attached? %>
-      </div>
-      <h2>Name: <%= pet.name %></h2>
-      <p><%= pet.pet_type %>, <%= pet.breed %></p>
-      <p>Age: <%= ((Time.zone.now - pet.birth_date.to_time) / 1.year.seconds).floor %></p>
-      <p>Gender: <%= pet.gender %></p>
+  <div class="row">
+    <% current_user&.pets&.each do |pet| %>
+      <div class="pet-container col-xs-12 col-sm-6 col-md-4">
+        <div class="pet-image">
+          <%= image_tag pet.image if pet.image.attached? %>
+        </div>
+        <h2>Name: <%= pet.name %></h2>
+        <p><%= pet.pet_type %>, <%= pet.breed %></p>
+        <p>Age: <%= ((Time.zone.now - pet.birth_date.to_time) / 1.year.seconds).floor %></p>
+        <p>Gender: <%= pet.gender %></p>
 
-      <div>
-        <%= link_to 'Edit', edit_pet_path(pet), class: "btn btn-primary" %>
-        <%= link_to 'Delete', pet, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
+        <div>
+          <%= link_to 'Edit', edit_pet_path(pet), class: "btn btn-primary" %>
+          <%= link_to 'Delete', pet, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
 <br><br><br>

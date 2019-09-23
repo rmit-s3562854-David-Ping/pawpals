@@ -1,13 +1,11 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:create, :destroy, :update, :edit]
+  before_action :check_if_user_logged_in, only: [:index, :show, :create, :destroy, :update, :edit]
   before_action :correct_user,   only: :destroy
 
   # GET /pets
   # GET /pets.json
   def index
-    @pets = Pet.all
-    # @pets = Pet.all.where(:user_id => current_user.id)
   end
 
   # GET /pets/1
@@ -31,7 +29,7 @@ class PetsController < ApplicationController
 
     respond_to do |format|
       if @pet.save
-        format.html { redirect_to pets_url, notice: 'Pet was successfully created.' }
+        format.html { redirect_to pets_url, notice: 'Pet added successfully.' }
         format.json { render :index, status: :created, location: @pet }
       else
         format.html { render :new }
@@ -45,7 +43,7 @@ class PetsController < ApplicationController
   def update
     respond_to do |format|
       if @pet.update(pet_params)
-        format.html { redirect_to pets_url, notice: 'Pet was successfully updated.' }
+        format.html { redirect_to pets_url, notice: 'Pet data updated.' }
         format.json { render :index, status: :ok, location: @pet }
       else
         format.html { render :edit }
@@ -59,7 +57,7 @@ class PetsController < ApplicationController
   def destroy
     @pet.destroy
     respond_to do |format|
-      format.html { redirect_to pets_url, notice: 'Pet was successfully deleted.' }
+      format.html { redirect_to pets_url, notice: 'Pet deleted successfully.' }
       format.json { head :no_content }
     end
   end

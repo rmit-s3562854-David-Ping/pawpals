@@ -105,7 +105,6 @@ footer {
   margin-top: 45px;
   padding: 20px;
   border-top: 1px solid $gray-medium-light;
-  // color: $gray-light;
   background-color: #eeeeee;
 }
 
@@ -157,15 +156,13 @@ nav.navbar.navbar-default {
       } 
     }
   }
-} 
-
-
+}
 
 nav.navbar {
   margin: 0;
   border: none;
   background-color: white;
-  // border-color: #222;
+
   .navbar-toggle {
     margin-right: 0;
   }
@@ -185,24 +182,14 @@ i.material-icons {
 }
 
 
-/* miscellaneous */
+/* misc */
 .debug_dump {
+  @include box_sizing;
+
   clear: both;
   float: left;
   width: 100%;
   margin-top: 45px;
-  @include box_sizing;
-}
-
-
-/* Gravatar */
-.gravatar {
-  border-radius: 50%;
-  margin: 25px auto 10px;
-  
-  + p {
-    text-align: center;
-  }
 }
 
 /* forms */
@@ -243,9 +230,11 @@ input {
 
 #error_explanation {
   color: red;
+
   ul {
+
+    margin: 0 0 25px 0;
     color: red;
-    margin: 0 0 30px 0;
   }
 }
 
@@ -330,7 +319,6 @@ span.image {
 
 /* Pets */
 .pet-list {
-  display: flex;
 
   .pet-container {
     display: flex;
@@ -345,73 +333,6 @@ span.image {
         width: 200px;
       }
     }
-  }
-}
-
-/* Courses page */
-.course-picture {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-
-  max-width: 280px;
-  
-  img {
-    max-width: 100%;
-    max-height: 200px;
-  }
-}
-
-.course-summary-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.course-summary {
-  background-color: $gray-medium-light;
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  padding: 20px;
-  float: none;
-}
-
-.course-rating {
-  display: flex;
-  justify-content: end;
-  
-  .new_course_vote {
-    padding: 0 15px;
-  }
-  
-  button {
-    &:active {
-      .material-icons {
-        color: SteelBlue;
-      }
-    }
-  }
-  
-  span {
-    display: flex;
-    padding-left: 30px;
-    
-    .material-icons {
-      font-size: 18px;
-      color: gray;
-      padding-right: 10px;
-    }
-  }
-}
-
-.admin-options {
-  display: flex;
-  justify-content: end;
-  padding: 20px 20px 0;
-  
-  a {
-    margin-left: 20px;
   }
 }
 
