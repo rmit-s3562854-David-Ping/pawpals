@@ -1,11 +1,11 @@
-class MicropostsController < ApplicationController
+class PostsController < ApplicationController
   # Only users that are logged in can create or delete posts
   before_action :check_if_user_logged_in, only: [:create, :destroy]
   before_action :correct_user,   only: :destroy
 
   def create
-    @micropost = current_user.microposts.build(micropost_params)
-    if @micropost.save
+    @post = current_user.posts.build(post_params)
+    if @post.save
       flash[:success] = "Post created!"
       redirect_to root_url
     else
@@ -15,19 +15,19 @@ class MicropostsController < ApplicationController
   end
 
   def destroy
-    @micropost.destroy
+    @post.destroy
     flash[:success] = "Post deleted"
     redirect_to request.referrer || root_url
   end
 
   private
 
-    def micropost_params
-      params.require(:micropost).permit(:content, :image)
+    def post_params
+      params.require(:post).permit(:content, :image)
     end
 
     def correct_user
-      @micropost = current_user.microposts.find_by(id: params[:id])
-      redirect_to root_url if @micropost.nil?
+      @post = current_user.posts.find_by(id: params[:id])
+      redirect_to root_url if @post.nil?
     end
 end

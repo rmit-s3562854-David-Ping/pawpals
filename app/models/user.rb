@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :microposts, dependent: :destroy
+  has_many :posts, dependent: :destroy
   has_many :pets, class_name: "Pet", foreign_key: "user_id"
   attr_accessor :remember_token, :activation_token
   has_one_attached :image
@@ -69,7 +69,7 @@ class User < ApplicationRecord
   end
 
   def feed
-    Micropost.where("user_id = ?", id)
+    Post.where("user_id = ?", id)
   end
 
   private
