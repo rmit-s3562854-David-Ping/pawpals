@@ -1,4 +1,4 @@
-<%= form_with(model: pet, local: true) do |form| %>
+<%= form_with(model: pet, local: true, class: "form-control") do |form| %>
   <% if pet.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(pet.errors.count, "error") %> prohibited this pet from being saved:</h2>
@@ -11,35 +11,35 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :pet_type %>
-    <%= form.text_field :pet_type %>
+    <%= form.text_field :pet_type, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :breed %>
-    <%= form.text_field :breed %>
+    <%= form.text_field :breed, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :image %>
-    <%= form.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+    <%= form.file_field :image, accept: "image/jpeg,image/gif,image/png", class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group form-inline">
     <%= form.label :birth_date %>
-    <%= form.date_select :birth_date, :start_year => Date.today.year - 20, :end_year => Date.today.year %>
+    <%= form.date_select :birth_date, {:start_year => Date.today.year - 20, :end_year => Date.today.year}, {:class => "form-control"} %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :gender %>
     <%= form.select(:gender, options_for_select(['male', 'female'], 'male'),
-               {}, class: "gender-select") %>
+               {}, class: "gender-select form-control") %>
   </div>
 
   <%= form.hidden_field :user_id, value: current_user.id %>

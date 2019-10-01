@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+
+    <% if current_user.friend_requests? %>
+      <section class="ui green segment">
+        <% current_user.requested_friends.each do |friend| %>
+          <h2 class="ui header">Friend Requests:</h2>
+          <div class="divided">
+            <%= render 'profile', user: friend %>
+            <div class="pull-left">
+              <%= form_tag ({controller: 'friends', action: 'add', method: 'post', id: friend.id}) do %>
+                <input class="btn btn-success" type=submit value='Accept'>
+              <% end %>
+            </div>
+            <div class="pull-right">
+              <%= form_tag ({controller: 'friends', action: 'reject', method: 'post', id: friend.id}) do %>
+                <input class="btn btn-danger" type=submit value='Decline'>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </section>
+    <% end %>
+
+    <% if current_user.requested_friends? %>
+      <section class="ui purple segment">
+        <h2 class="ui header">Pending:</h2>
+        <div class="divided">
+          <% current_user.pending_friends.each do |friend| %>
+            <%= render 'profile', user: friend %>
+          <% end %>
+        </div>
+      </section>
+    <% end %>
+
+    <section class="ui pink segment">
+      <h2 class="ui header">Your Friends:</h2>
+      <% if current_user.friends? %>
+        <div class="divided">
+          <% current_user.friends.each do |friend| %>
+            <%= render 'profile', user: friend %>
+            <%= form_tag ({controller: 'friends', action: 'remove', method: 'post', id: friend.id}) do %>
+              <input class="btn btn-danger" type=submit value='Remove'>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    </section>
+  </div>
+
+  <div class="col-xs-12 col-md-6">
+    <section class="ui blue segment divided">
+      <% current_user.not_friends.sample(8).each do |user| %>
+        <%= render 'profile', user: user %>
+        <%= form_tag ({controller: 'friends', action: 'create', method: 'post', id: user.id}) do %>
+          <input class="btn btn-primary" type=submit value='Add Friend'>
+        <% end %>
+      <% end %>
+    </section>
+  </div>
+
+</div>

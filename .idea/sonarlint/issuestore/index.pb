@@ -70,8 +70,6 @@ Q
 !app/views/pets/show.json.jbuilder,0\8\0825fc62557a5d4d3fbacc91e6ef97e2e10472db
 x
 Hdb/migrate/20190918140218_create_active_storage_tables.active_storage.rb,8\3\83974c3ce42d24b3d51b2af5a84f74b3f5176e79
-G
-app/models/micropost.rb,2\b\2b16b5052ecc944f27e07e88646218c9479b4103
 X
 (db/migrate/20190922024900_create_pets.rb,1\a\1ad7d6a4dca91542510cd03a5c9516c171570452
 d
@@ -90,8 +88,6 @@ L
 0app/views/feedback_mailer/send_feedback.text.erb,1\c\1c2d57562f6fb25469902f5a6e341bc7686944d0
 O
 app/views/feedback/new.html.erb,9\2\92fa8e097d3ffed7a28c4cc5694adc42ac32a45f
-Y
-)app/views/shared/_micropost_form.html.erb,4\c\4ce989f1abc6a3a917e93557fb3c886871da61aa
 T
 $app/views/shared/_user_info.html.erb,4\c\4c718c4362ceb344c7e2fd6e8d207b902803c9f2
 O
@@ -108,12 +104,8 @@ T
 $app/views/static_pages/home.html.erb,3\f\3f5e61ffd63c9aa71b19651f2f9a556a610ab4e2
 B
 app/models/user.rb,4\e\4ed0c03b53dbc8320da88e7887465514cd9e90a4
-^
-.db/migrate/20190918035250_create_microposts.rb,d\d\ddd8c4031582fd6f2f97d289ae3967102cfa6ba9
 _
 /app/assets/stylesheets/account_activations.scss,9\6\961cf0d6c2f3a2d495fbd64fabfa5fced789e857
-V
-&app/assets/stylesheets/microposts.scss,1\0\10fb783ae49a8695594bda5cdb2cf5d5270712ed
 P
  app/assets/stylesheets/pets.scss,9\4\94be9cb0b67f564c4f5ff66426f15360a76bf152
 U
@@ -132,8 +124,6 @@ R
 "app/controllers/pets_controller.rb,c\e\ce356cce1a729110d4d345cfa8f77a0e8ca8ba99
 S
 #app/controllers/users_controller.rb,2\8\28f48e0bc2718ddf87752d15b58a0016c13baf1c
-X
-(app/controllers/microposts_controller.rb,8\f\8f9a1b18533d4597dd0cbe4a8e7180ecfa33eaeb
 Z
 *app/controllers/static_pages_controller.rb,e\4\e411ad7eefd53bf4aa08f4a552ee9cbdb8f5a0f2
 J
@@ -146,8 +136,6 @@ K
 config/environments/test.rb,f\5\f52903eb564521c5ab86ad6edd6582a3b5f15b2f
 <
 db/schema.rb,2\c\2cda0c6171fa7d04989507a1dd112e34c40df46d
-P
- app/helpers/microposts_helper.rb,1\6\16f68d2c9b3ce85fbf8348b78520694d2fde5458
 Y
 )app/helpers/account_activations_helper.rb,0\f\0fd4149ae0afd0358ecef58191a08dd872e15578
 N
@@ -166,8 +154,6 @@ Q
 !app/views/layouts/mailer.html.erb,5\7\5791af0ec7101c9506acc0ad66c5becffb57bcf2
 Q
 !app/views/layouts/mailer.text.erb,2\c\2c761add2e75b8929fac974ce0d883422cfbfac8
-X
-(app/views/microposts/_micropost.html.erb,d\f\df39539436da4e04f3298031f3a3d4ed13c42a72
 N
 app/views/users/_form.html.erb,6\0\609b2a98004a46d75f0bbcdce0cfdaca785a1f99
 S

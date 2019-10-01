@@ -1,5 +1,5 @@
 <li id="post-<%= post.id %>">
-  <%= link_to picture_for(post.user), post.user %>
+  <%= link_to picture_for(post.user, "avatar"), post.user %>
   <span class="user"><%= link_to post.user.name, post.user %></span>
   <span class="content">
     <%= post.content %>

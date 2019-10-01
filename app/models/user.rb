@@ -27,6 +27,10 @@ class User < ApplicationRecord
             content_type: { in: %w[image/jpeg image/gif image/png], message: "must be a valid image format" },
             size:         { less_than: 5.megabytes, message: "should be less than 5MB" }
 
+  has_friendship
+
+
+
   # Returns the hash digest of the given string.
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -70,6 +74,32 @@ class User < ApplicationRecord
 
   def feed
     Post.where("user_id = ?", id)
+  end
+
+  def friends?
+    self.friends
+  end
+
+  def friend_requests?
+    self.requested_friends.any?
+  end
+
+  def requested_friends?
+    self.pending_friends.any?
+  end
+
+  def invite_friend(user)
+    self.friend_request(user)
+  end
+
+  def not_friends
+    potential_friends = []
+    User.all.each do |user|
+      if(self.friends_with?(user) != true && self != user && self.friends.include?(user) != true && self.pending_friends.include?(user) != true && self.requested_friends.include?(user) != true)
+        potential_friends << user
+      end
+    end
+    return potential_friends
   end
 
   private

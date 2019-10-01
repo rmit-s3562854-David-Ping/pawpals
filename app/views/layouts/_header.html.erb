@@ -1,7 +1,7 @@
 <header>
   <div class="container">
-    <nav class="navbar navbar-default">
-      <%= link_to "PawPals", root_path, id: "logo", class: "btn btn-info" %>
+    <nav class="navbar navbar-inverse">
+      <%= link_to "PawPals", root_path, id: "logo" %>
 
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
@@ -17,22 +17,27 @@
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
             <li>
-              <%= link_to users_path, :class => "btn btn-info" do %>
+              <%= link_to users_path do %>
                 <i class="material-icons">room</i><span>Find Nearby</span>
               <% end %>
             </li>
             <li>
-              <%= link_to pets_path, :class => "btn btn-info" do %>
+              <%= link_to friends_path do %>
+                <i class="material-icons">people</i><span>Friends</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to pets_path do %>
                 <i class="material-icons">pets</i><span>My Pets</span>
               <% end %>
             </li>
             <li>
-              <%= link_to new_pet_path, :class => "btn btn-info" do %>
+              <%= link_to new_pet_path do %>
                 <i class="material-icons">description</i><span>New Pet</span>
               <% end %>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle btn btn-danger" data-toggle="dropdown"><i class="material-icons">person</i><%= current_user.name %><span class="caret"></span>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="material-icons">person</i><%= current_user.name %><span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
 <!--                <li><%#= link_to "View Profile", current_user %></li>-->
@@ -44,7 +49,7 @@
               </ul>
             </li>
           <% else %>
-            <li><%= link_to raw('<i class="material-icons">person</i>Log in'), login_path, class: "btn btn-info nav-link" %></li>
+            <li><%= link_to raw('<i class="material-icons">person</i>Log in'), login_path %></li>
           <% end %>
         </ul>
       </div>

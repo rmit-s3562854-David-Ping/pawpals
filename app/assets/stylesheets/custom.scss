@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "semantic-ui";
 
 /* mixins, variables, etc. */
 
@@ -16,6 +17,7 @@ $gray-medium-light: #eaeaea;
 .flex-container {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 html {
@@ -80,18 +82,17 @@ h3 {
 
 /* header */
 header {
-  // background-color: #222;
   margin-bottom: 20px;
+  background-color: #222;
 }
 
 #logo {
+  padding: 15px;
   float: left;
-  margin-right: 10px;
   font-size: 1.7em;
   color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
   font-weight: bold;
   &:hover {
     color: white;
@@ -131,6 +132,14 @@ nav.navbar.navbar-default {
     }
     
   }
+
+}
+
+nav.navbar {
+
+  margin: 0;
+  border: none;
+
   div[aria-expanded="true"] ul.nav {
     & > li, li.open {
       margin: 0;
@@ -139,29 +148,23 @@ nav.navbar.navbar-default {
   ul.nav {
     & > li {
       margin-left: 10px;
-      
+
       a {
         display: flex;
         align-items: center;
-      
+
         /* Material design */
         i.material-icons {
           font-size: 16px;
           padding-right: 5px;
         }
-        
+
         .caret {
           margin-left: 5px;
         }
-      } 
+      }
     }
   }
-}
-
-nav.navbar {
-  margin: 0;
-  border: none;
-  background-color: white;
 
   .navbar-toggle {
     margin-right: 0;
@@ -192,10 +195,8 @@ i.material-icons {
   margin-top: 45px;
 }
 
-/* forms */
-form {
-  padding: 15px;
-  background-color: $gray-medium-light;
+.form-control {
+  height: 100%;
 }
 
 input, textarea, select, .uneditable-input {
@@ -257,10 +258,6 @@ input {
   }
 }
 
-.user-picture {
-  width: 200px;
-}
-
 /* posts */
 
 .posts {
@@ -273,10 +270,6 @@ input {
   .user {
     margin-top: 5em;
     padding-top: 0;
-  }
-
-  .user-picture {
-    width: 50px;
   }
 
   .content {
@@ -318,22 +311,10 @@ span.image {
 }
 
 /* Pets */
-.pet-list {
-
-  .pet-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .pet-image {
-
-      img {
-        border-radius: 50%;
-        height: 200px;
-        width: 200px;
-      }
-    }
-  }
+.pet-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Button */
@@ -349,4 +330,42 @@ button.no-default {
 
 .d-inline-block {
   display: inline-block;
+}
+
+/* Friends */
+.user-profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+
+  img {
+    margin-right: 10px !important;
+  }
+}
+
+.ui.tiny.image {
+  height: 80px;
+}
+.ui.small.image {
+  height: 150px;
+}
+
+.divided {
+
+  .user-profile {
+    border-top: 1px solid lightgray;
+    padding-top: 15px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+  }
+
+  .btn {
+    margin-bottom: 15px;
+    &:first-child {
+      margin-bottom: 0;
+    }
+  }
 }

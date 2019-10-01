@@ -14,8 +14,15 @@ User.create!(name:  "David Ping",
              activated: true,
              activated_at: Time.zone.now)
 
+User.create!(name:  "John Doe",
+             email: "test@mail.com",
+             password:              "Password@9",
+             password_confirmation: "Password@9",
+             activated: true,
+             activated_at: Time.zone.now)
+
 # Generate a bunch of additional users.
-99.times do |n|
+10.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@test.org"
   password = "Password@9"
@@ -28,8 +35,8 @@ User.create!(name:  "David Ping",
 end
 
 # Generate posts for a subset of users.
-users = User.order(:created_at).take(6)
-50.times do
+users = User.order(:created_at).take(5)
+5.times do
   content = Faker::Lorem.sentence(word_count: 5)
   users.each { |user| user.posts.create!(content: content) }
 end

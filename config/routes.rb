@@ -16,4 +16,11 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations, only: [:edit]
   resources :posts,               only: [:create, :destroy]
+  resources :friends do
+    member do
+      post 'add'
+      post 'reject'
+      post 'remove'
+    end
+  end
 end

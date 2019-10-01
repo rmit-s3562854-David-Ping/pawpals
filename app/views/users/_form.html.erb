@@ -1,22 +1,30 @@
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, html: {class: "form-control"}) do |f| %>
   <%= render 'shared/error_messages', object: @user %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name, class: 'form-control' %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
 
-  <%= f.label :email %>
-  <%= f.email_field :email, class: 'form-control' %>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'form-control' %>
+  </div>
 
-  <%= f.label :password %>
-  <%= f.password_field :password, class: 'form-control' %>
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control' %>
+  </div>
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation, class: 'form-control' %>
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+  </div>
 
-  <span class="image">
+  <div class="form-group">
     <%= f.label :image %>
     <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
-  </span>
+  </div>
 
   <%= f.submit yield(:button_text), class: "btn btn-success" %>
 <% end %>

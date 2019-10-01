@@ -1,0 +1,12 @@
+<div class="user-profile">
+  <div class="flex-container">
+    <%= picture_for user, "avatar" %>
+    <h3><%= link_to user.name, user_path(user) %></h3>
+  </div>
+  <% if user.pets.first %>
+    <div class="flex-container">
+      <%= picture_for user.pets.first, "avatar" %>
+      <h3><%= user.pets.first.name %></h3>
+    </div>
+  <% end %>
+</div>

@@ -11,7 +11,7 @@ gem 'jquery-rails',   '4.3.1'
 gem 'duktape'
 gem 'turbolinks',     '5.0.1'
 gem 'jbuilder',       '2.7.0'
-# gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bcrypt-ruby', '3.1.0', :require => 'bcrypt'
 # gem 'bcrypt',         '3.1.11'
 gem 'carrierwave',    '1.2.2'
@@ -24,6 +24,8 @@ gem 'bootstrap-will_paginate', '1.0.0'
 gem 'aws-sdk-rails'
 gem 'aws-sdk-s3', require: false
 gem 'active_storage_validations', '0.8.2'
+gem 'has_friendship'
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 
 group :development, :test do
   gem 'sqlite3', '1.4.1'
