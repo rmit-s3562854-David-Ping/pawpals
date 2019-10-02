@@ -25,7 +25,7 @@ gem 'aws-sdk-rails'
 gem 'aws-sdk-s3', require: false
 gem 'active_storage_validations', '0.8.2'
 gem 'has_friendship'
-gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+gem 'semantic-ui-sass'
 gem 'aws-sdk'
 
 group :development, :test do
