@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :restrict_access, only: [:aws_auth]
+
   before_action :set_user,       only: [:show, :edit, :update, :destroy]
   before_action :check_if_user_logged_in, only: [:index, :edit, :update]
   before_action :is_correct_user,   only: [:edit, :update]
@@ -30,9 +32,28 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      @user.send_activation_email
-      flash[:info] = "Please check your email to activate your account."
-      redirect_to root_url
+      # Create the client object to interact with AWS Cognito, sets the region
+      client = Aws::CognitoIdentityProvider::Client.new(region: 'us-west-2')
+      begin
+        # Attempt to sign up with the provided email and password
+        resp = client.sign_up({
+                                  client_id: Rails.application.credentials.aws[:aws_cognito_app_client_id],
+                                  username: @user.email,
+                                  password: @user.password
+                              })
+        if resp
+          @user.send_activation_email
+          flash[:info] = "Please check your email to activate your account."
+          redirect_to root_url
+        end
+      rescue Aws::SES::Errors::MessageRejected => e
+        flash[:danger] = e.message
+        render 'new' and return
+      rescue => e
+        @user.destroy
+        flash[:danger] = e.message
+        render 'new' and return
+      end
     else
       render 'new'
     end
@@ -66,4 +87,9 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation, :image)
     end
+
+    def restrict_access
+      head :unauthorized unless params[:access_token] == 'hello'
+    end
+
 end

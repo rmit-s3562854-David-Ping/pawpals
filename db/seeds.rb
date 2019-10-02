@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Create a main sample user.
-User.create!(name:  "David Ping",
-             email: "davidping96@gmail.com",
+# Create a sample user.
+User.create!(name:  "Hoid Lightsong",
+             email: "stormlight@mail.com",
              password:              "Password@9",
              password_confirmation: "Password@9",
              activated: true,
@@ -21,7 +21,7 @@ User.create!(name:  "John Doe",
              activated: true,
              activated_at: Time.zone.now)
 
-# Generate a bunch of additional users.
+# Generate example users using faker gem
 10.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@test.org"
@@ -34,7 +34,7 @@ User.create!(name:  "John Doe",
                activated_at: Time.zone.now)
 end
 
-# Generate posts for a subset of users.
+# Generate posts some users
 users = User.order(:created_at).take(5)
 5.times do
   content = Faker::Lorem.sentence(word_count: 5)
