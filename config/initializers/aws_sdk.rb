@@ -8,5 +8,5 @@ require 'json'
 # adding it to .gitignore
 # secrets = JSON.load(File.read('path/to/aws_secrets.json'))
 
-creds = Aws::Credentials.new('AKIAIWSIP6LDPA3Q7V2Q', '219j/aqGxvwv6NHiVWZ8+3TC9xzilvkqLsy98Xeh')
+creds = Aws::Credentials.new(Rails.application.credentials.aws[:access_key_id], Rails.application.credentials.aws[:secret_access_key])
 Aws::Rails.add_action_mailer_delivery_method(:aws_sdk, credentials: creds, region: 'us-west-2')
