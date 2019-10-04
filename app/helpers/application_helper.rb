@@ -8,4 +8,10 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
+
+  def distance(user)
+    if user.location
+      Google::Maps.distance(user.location, current_user.location)
+    end
+  end
 end

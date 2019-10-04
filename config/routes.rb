@@ -23,4 +23,5 @@ Rails.application.routes.draw do
       post 'remove'
     end
   end
+  resources :user_location, only: [:update]
 end

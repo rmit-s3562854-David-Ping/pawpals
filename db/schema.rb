@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2019_09_29_080326) do
     t.string "email"
     t.string "password_digest"
     t.string "remember_digest"
+    t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "activation_digest"

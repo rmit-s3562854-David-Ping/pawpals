@@ -12,7 +12,7 @@
         <% current_user.pets&.each do |pet| %>
           <div class="pet-container col-xs-12 col-sm-6">
             <%= image_tag pet.image, class: "ui tiny circular image" if pet.image.attached? %>
-            <h2>Name: <%= pet.name %></h2>
+            <h2><%= pet.name %></h2>
           </div>
         <% end %>
       </div>

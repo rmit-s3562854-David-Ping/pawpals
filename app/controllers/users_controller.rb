@@ -45,6 +45,7 @@ class UsersController < ApplicationController
           redirect_to root_url
         end
       rescue Aws::SES::Errors::MessageRejected => e
+        @user.destroy
         flash[:danger] = e.message
         render 'new' and return
       rescue => e

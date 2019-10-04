@@ -22,15 +22,37 @@ User.create!(name:  "John Doe",
              activated_at: Time.zone.now)
 
 # Generate example users using faker gem
-10.times do |n|
+5.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@test.org"
   password = "Password@9"
+  latitude = -37.8102419
+  latitude += n * 0.1
+  longitude = 144.9605794
+  location = latitude.to_s + "," + longitude.to_s
   User.create!(name:  name,
                email: email,
                password:              password,
                password_confirmation: password,
                activated: true,
+               location: location,
+               activated_at: Time.zone.now)
+end
+
+5.times do |n|
+  name  = Faker::Name.name
+  email = "example-#{n+6}@test.org"
+  password = "Password@9"
+  latitude = -37.8102419
+  latitude -= n * 0.1
+  longitude = 144.9605794
+  location = latitude.to_s + "," + longitude.to_s
+  User.create!(name:  name,
+               email: email,
+               password:              password,
+               password_confirmation: password,
+               activated: true,
+               location: location,
                activated_at: Time.zone.now)
 end
 

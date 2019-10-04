@@ -27,6 +27,7 @@ gem 'active_storage_validations', '0.8.2'
 gem 'has_friendship'
 gem 'semantic-ui-sass'
 gem 'aws-sdk'
+gem 'google-maps'
 
 group :development, :test do
   gem 'sqlite3', '1.4.1'

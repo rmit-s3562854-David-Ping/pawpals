@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :pets, class_name: "Pet", foreign_key: "user_id"
-  attr_accessor :remember_token, :activation_token
+  attr_accessor :remember_token, :activation_token, :distance
   has_one_attached :image
 
   before_save   :downcase_email
@@ -76,30 +76,27 @@ class User < ApplicationRecord
     Post.where("user_id = ?", id)
   end
 
-  def friends?
-    self.friends
-  end
-
-  def friend_requests?
-    self.requested_friends.any?
-  end
-
-  def requested_friends?
-    self.pending_friends.any?
-  end
-
   def invite_friend(user)
-    self.friend_request(user)
+    friend_request(user)
   end
 
-  def not_friends
-    potential_friends = []
+  def potential_friends
+    arr = []
     User.all.each do |user|
-      if(self.friends_with?(user) != true && self != user && self.friends.include?(user) != true && self.pending_friends.include?(user) != true && self.requested_friends.include?(user) != true)
-        potential_friends << user
+      if (self != user) && !friends_with?(user) && !friends.include?(user) && !pending_friends.include?(user) && !requested_friends.include?(user) && user.location
+        arr << user
       end
     end
-    return potential_friends
+    # Sort by distance
+    arr.each do |user|
+      user.distance = Google::Maps.distance(user.location, self.location)
+    end
+    sorted_arr = arr.sort_by {|user| user.distance}
+    return sorted_arr
+  end
+
+  def set_location(location)
+    update_attribute(:location, location)
   end
 
   private

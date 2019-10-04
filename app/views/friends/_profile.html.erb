@@ -3,10 +3,15 @@
     <%= picture_for user, "avatar" %>
     <h3><%= link_to user.name, user_path(user) %></h3>
   </div>
-  <% if user.pets.first %>
-    <div class="flex-container">
+  <div class="flex-container">
+    <% if user.pets.first %>
       <%= picture_for user.pets.first, "avatar" %>
       <h3><%= user.pets.first.name %></h3>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
+  <div class="flex-container">
+    <% if user.location && current_user.location %>
+      <%= distance(user) %>
+    <% end %>
+  </div>
 </div>

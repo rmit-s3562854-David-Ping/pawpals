@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-xs-12 col-md-6">
 
-    <% if current_user.friend_requests? %>
+    <% if current_user.requested_friends.length > 0 %>
       <section class="ui green segment">
         <% current_user.requested_friends.each do |friend| %>
           <h2 class="ui header">Friend Requests:</h2>
@@ -22,7 +22,7 @@
       </section>
     <% end %>
 
-    <% if current_user.requested_friends? %>
+    <% if current_user.pending_friends.length > 0 %>
       <section class="ui purple segment">
         <h2 class="ui header">Pending:</h2>
         <div class="divided">
@@ -35,22 +35,21 @@
 
     <section class="ui pink segment">
       <h2 class="ui header">Your Friends:</h2>
-      <% if current_user.friends? %>
-        <div class="divided">
-          <% current_user.friends.each do |friend| %>
-            <%= render 'profile', user: friend %>
-            <%= form_tag ({controller: 'friends', action: 'remove', method: 'post', id: friend.id}) do %>
-              <input class="btn btn-danger" type=submit value='Remove'>
-            <% end %>
+      <div class="divided">
+        <% current_user.friends.each do |friend| %>
+          <%= render 'profile', user: friend %>
+          <%= form_tag ({controller: 'friends', action: 'remove', method: 'post', id: friend.id}) do %>
+            <input class="btn btn-danger" type=submit value='Remove'>
           <% end %>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </section>
   </div>
 
   <div class="col-xs-12 col-md-6">
     <section class="ui blue segment divided">
-      <% current_user.not_friends.sample(8).each do |user| %>
+      <h2 class="ui header">Nearby users:</h2>
+      <% current_user.potential_friends.each do |user| %>
         <%= render 'profile', user: user %>
         <%= form_tag ({controller: 'friends', action: 'create', method: 'post', id: user.id}) do %>
           <input class="btn btn-primary" type=submit value='Add Friend'>
