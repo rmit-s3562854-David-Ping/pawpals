@@ -1,11 +1,11 @@
 <%= form_with(model: @post) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Write a post..." %>
+  <div class="field form-group">
+    <%= f.text_area :content, placeholder: "Write a post...", class: 'form-control' %>
   </div>
   <%= f.submit "Post", class: "btn btn-primary" %>
-  <span class="image">
-    <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+  <span class="image form-group">
+    <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png", class: 'form-control' %>
   </span>
 <% end %>
 
