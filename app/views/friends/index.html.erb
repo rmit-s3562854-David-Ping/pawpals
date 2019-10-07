@@ -49,7 +49,10 @@
   <div class="col-xs-12 col-md-6">
     <section class="ui blue segment divided">
       <h2 class="ui header">Nearby users:</h2>
-      <% current_user.potential_friends.each do |user| %>
+      <% current_user.potential_friends.each_with_index do |user, index| %>
+        <% if index === 5 %>
+          <% break %>
+        <% end %>
         <%= render 'profile', user: user %>
         <%= form_tag ({controller: 'friends', action: 'create', method: 'post', id: user.id}) do %>
           <input class="btn btn-primary" type=submit value='Add Friend'>

@@ -36,15 +36,6 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :aws_sdk
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  # config.action_mailer.smtp_settings = {
-  #     :address => "email-smtp.us-west-2.amazonaws.com",
-  #     :port => 587,
-  #     :user_name => ENV["AKIASURAY5ADM2O7DKTH"], #Your SMTP user
-  #     :password => ENV["BEmq66Dzm1PpY8Lpibb5W2VHMhPanJU5BoMGwn43Hw73"], #Your SMTP password
-  #     :authentication => :login,
-  #     :enable_starttls_auto => true,
-  #     :region => ENV["us-west-2"]
-  # }
 
   config.action_mailer.perform_caching = false
 
