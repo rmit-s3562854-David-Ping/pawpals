@@ -92,7 +92,7 @@ class User < ApplicationRecord
       user.distance = Google::Maps.distance(user.location, self.location)
     end
     sorted_arr = arr.sort_by {|user| user.distance}
-    return sorted_arr[]
+    return sorted_arr
   end
 
   def set_location(location)
