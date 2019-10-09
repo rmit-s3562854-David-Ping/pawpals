@@ -23,16 +23,8 @@ class SessionsController < ApplicationController
                                         }
                                     })
       rescue => e
-        # begin
-        #   res = client.sign_up({client_id: Rails.application.credentials.aws[:aws_cognito_app_client_id], username: params[:session][:email].downcase, password: params[:session][:password]})
-        #   res = client.admin_confirm_sign_up({user_pool_id: Rails.application.credentials.aws[:aws_cognito_pool_id], username: user.email})
-        #   log_in user
-        #   params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-        #   redirect_to root_url and return
-        # rescue => e
-          flash[:danger] = e.message
-          render 'new' and return
-        # end
+        flash[:danger] = e.message
+        render 'new' and return
       end
 
       if resp&.authentication_result

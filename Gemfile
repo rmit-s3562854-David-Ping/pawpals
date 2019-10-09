@@ -26,7 +26,8 @@ gem 'aws-sdk-s3', require: false
 gem 'active_storage_validations', '0.8.2'
 gem 'has_friendship'
 gem 'semantic-ui-sass'
-gem 'aws-sdk'
+# gem 'aws-sdk'
+gem 'aws-sdk-cognitoidentityprovider', '~> 1.3'
 gem 'google-maps'
 
 group :development, :test do
