@@ -14,12 +14,14 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       # Try to authenticate the user through cognito
       begin
+        password = BCrypt::Password.new(user.password_digest)
+
         resp = client.initiate_auth({
                                         client_id: Rails.application.credentials.aws[:aws_cognito_app_client_id],
                                         auth_flow: "USER_PASSWORD_AUTH",
                                         auth_parameters: {
                                             "USERNAME" => params[:session][:email].downcase,
-                                            "PASSWORD" => params[:session][:password_digest]
+                                            "PASSWORD" => password
                                         }
                                     })
       rescue => e
