@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
                                         auth_flow: "USER_PASSWORD_AUTH",
                                         auth_parameters: {
                                             "USERNAME" => params[:session][:email].downcase,
-                                            "PASSWORD" => params[:session][:password]
+                                            "PASSWORD" => params[:session][:password_digest]
                                         }
                                     })
       rescue => e

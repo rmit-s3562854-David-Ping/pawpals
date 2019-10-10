@@ -37,7 +37,7 @@ class UsersController < ApplicationController
         resp = client.sign_up({
                                   client_id: Rails.application.credentials.aws[:aws_cognito_app_client_id],
                                   username: @user.email,
-                                  password: @user.password
+                                  password: @user.password_digest
                               })
         if resp
           @user.send_activation_email
