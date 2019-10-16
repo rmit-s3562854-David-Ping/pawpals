@@ -83,9 +83,9 @@ class User < ApplicationRecord
   def potential_friends
     arr = []
     User.all.each do |user|
-      if (self != user) && !friends_with?(user) && !friends.include?(user) && !pending_friends.include?(user) && !requested_friends.include?(user) && user.location
+      # if (self != user) && !friends_with?(user) && !friends.include?(user) && !pending_friends.include?(user) && !requested_friends.include?(user) && user.location
         arr << user
-      end
+      # end
     end
     # Sort by distance
     arr.each do |user|
