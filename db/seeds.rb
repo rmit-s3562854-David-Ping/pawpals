@@ -15,7 +15,7 @@ User.create!(name:  "Hoid Lightsong",
              activated_at: Time.zone.now)
 
 User.create!(name:  "John Doe",
-             email: "test@mail.com",
+             email: "davidping96@gmail.com",
              password:              "Password@9",
              password_confirmation: "Password@9",
              activated: true,
