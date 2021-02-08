@@ -14,7 +14,7 @@ gem 'jbuilder',       '2.7.0'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bcrypt-ruby', '3.1.0', :require => 'bcrypt'
 # gem 'bcrypt',         '3.1.11'
-gem 'carrierwave',    '1.2.2'
+gem 'carrierwave',    '1.3.2'
 gem 'image_processing', '1.9.3'
 gem 'mini_magick', '4.9.5'
 gem 'popper_js',      '1.14.5'
